@@ -11,3 +11,5 @@
 > * HTML 4/5, XHTML
 > * CSS
 > * Java Scripta
+
+fix git in mac problem
