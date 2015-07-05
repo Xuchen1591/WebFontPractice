@@ -314,6 +314,61 @@ text-area: <textarea name="memo1" required></textarea>
     <input type="submit">
 </form>
 
+<!-- element: figure figurecaption -->
+<figure>
+    <img src="IMG/1.jpg" alt="jpg1" width="300" height="300">
+    <img src="IMG2/2.jpg" alt="jpg2" width="300" height="300">
+    <figcaption>figurecaption: title of figure</figcaption>
+</figure>
+
+<!-- element: details -->
+<details>
+    <summary>精武风云</summary>
+    <p>陈真主演，当年为报师恩，独闯虹口到场。。。。。啪啪啪啪啪啪啪啪</p>
+</details>
+
+<br>
+<!-- element: mark -->
+<h2>
+    搜索 “<mark>HTML 5(我被mark了)</mark>”，找到总共10，200，000篇，用时0.041秒
+</h2>
+
+<!-- element: progress -->
+<script>
+    var progressBar = document.getElementById('p');
+    function button_onclick(){
+        var progressBar = document.getElementById('p');
+        progressBar.getElementsByTagName('span')[0].textContent = "0";
+        for(var i=0;i<=100;i++){
+            //var is = i;
+            setInterval("updateProgress(i);",1000);
+            //updateProgress(i);
+        }
+    }
+    function updateProgress(newValue){
+        var progressBar = document.getElementById('p');
+        progressBar.value = newValue;
+        progressBar.getElementsByTagName('span')[0].textContent = newValue;
+    }
+</script>
+<section>
+    <h2>example of process element</h2>
+    <p>finished: <progress id="p" max="100"><span>0</span>%</progress></p>
+    <input type="button" onclick="button_onclick()" value="start" />
+</section>
+
+<!-- element: dl -->
+<aside>
+    <h2>属于解释</h2>
+    <dl>
+        <dt>RSS</dt>
+        <dd>RSS 我也不知道是什么呢，而且我是第一条介绍</dd>
+        <dd>RSS 我也不知道是什么呢，而且我是第二条介绍</dd>
+        <dt><dfn>Blog</dfn></dt>
+        <dd>blog, I know what is a blog.</dd>
+    </dl>
+</aside>
+
 <footer>
     <div>
         <address>
