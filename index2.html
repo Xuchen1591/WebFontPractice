@@ -276,6 +276,44 @@ type number: <input name="number1" type="number" max="100" min="0" step="5"><br>
 type range: <input name="range1" type="range" value="25" max="100" min="0" step="5"><br>
 text-area: <textarea name="memo1" required></textarea>
 
+<!-- element: output
+    must be in a table
+    or add a "form" property for it
+    -->
+<form id="testform">
+    please input a number:
+    <input name="range1" type="range" min="0" max="100" step="5" />
+    <output onforminput="value=range1.value">change for "range"</output>
+</form>
+<br>
+
+<!-- auto-check -->
+<form method="post">
+    <input name="text" type="text" required pattern="[0-9][A-Z]{3}" placeholder="one number and 3 upper case">
+    <input type="submit">
+</form>
+
+<!-- manual check -->
+<script language="JavaScript">
+    function check(){
+        var email1 = document.getElementById("email");
+        if(email1.value == ""){
+            alert("please input email");
+            return false;
+        }
+        else if(!email1.checkValidity())
+            alert("please input valid email address");
+        else
+            alert("congradualations, valid email!");
+    }
+</script>
+<form id="testform2" onsubmit="return check();">
+    <label for="email">Email</label>
+    <input name="email" id="email" type="email">
+    <br>
+    <input type="submit">
+</form>
+
 <footer>
     <div>
         <address>
