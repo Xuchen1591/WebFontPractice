@@ -36,3 +36,41 @@ var r = new RegExp("js");
 //method 3:
 var o1 = Object.create(null);
 var o2 = Object.create({x:1,y:2});
+
+
+//
+//check property
+//
+var o = {
+    x:1
+};
+
+//method 1
+o.hasOwnProperty("x");  //true
+o.hasOwnProperty("y");  //false
+//method 2
+o.x !== undefined;  //false
+o.y !== undefined;  //true
+
+
+
+//
+//list property
+//
+var p = {
+    x:1,
+    y:2,
+    z:3
+};
+for(index in p)
+    console.log(index);
+
+//jump method
+for(index in p){
+    if(typeof p[index] === "function")
+        continue;
+}
+
+
+
+
