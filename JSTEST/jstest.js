@@ -72,5 +72,46 @@ for(index in p){
 }
 
 
+//
+//getter & setter
+//
+var p = {
+    x: 1.0,
+    y: 2.0,
+
+    get r(){
+        return Math.sqrt(this.x*this.x + this.y*this.y);
+    },
+
+    set r(newValue){
+        this.x = newValue;
+        this.y = newValue;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
