@@ -90,11 +90,40 @@ var p = {
 }
 
 
+//
+//Array
+//
+var empty = [];
+var primes = [2,3,5,7,9];
+var misc = [1.1,"xuchen",true];
+
+var base =1;
+var table = [base,base+1,base+2,base*base];     //expression also fine
+
+var ObjArray = [[1,{x:1,y:2}],[2,{x:3},y:4}]];
+
+var a = new Array();
+
+a.push(2);
+a.push(true);
+a.push(2,3,4);
+a.pop();
+var len = a.length;
 
 
+delete a[1];    //a[1] no longer exist, but a.length won't change
 
+//array methods
+a.join();   //join all element in a into a string, divide by "," default
+a.join(" ");    //set divide by space
+a.join("");     //set no divide
 
+a.reverse();    //reverse elements order
 
+a.sort();
+
+//...
+//...
 
 
 
