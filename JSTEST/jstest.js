@@ -100,7 +100,7 @@ var misc = [1.1,"xuchen",true];
 var base =1;
 var table = [base,base+1,base+2,base*base];     //expression also fine
 
-var ObjArray = [[1,{x:1,y:2}],[2,{x:3},y:4}]];
+var ObjArray = [[1,{x:1,y:2}],[2,{x:3,y:4}]];
 
 var a = new Array();
 
@@ -124,6 +124,39 @@ a.sort();
 
 //...
 //...
+
+
+
+//
+//
+//
+//function
+//
+//
+//
+//define a function
+function printpros(o){
+    for (var i in o)
+        console.log(i);
+}
+
+function distance(x1,y1,x2,y2){
+    var dx = x2-x1;
+    var dy = y2-y1;
+    return Math.sqrt(dx*dx + dy*dy);
+}
+
+function factoria(x){
+    if(x<=1)
+        return 1;
+    else
+        return x*factoria(x-1);
+}
+
+var square = function (x) {
+    return x*x;
+}
+
 
 
 

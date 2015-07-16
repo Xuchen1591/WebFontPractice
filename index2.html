@@ -375,8 +375,22 @@ text-area: <textarea name="memo1" required></textarea>
     我最喜欢的是雷神的那个电影<cite>《雷神传奇》</cite>
 </p>
 
+
+
 <!-- File API -->
-<input type="file">
+<script language="JavaScript">
+    function ShowFileName(){
+        var file;
+        for(var i=0;i<document.getElementById("file").files.length;i++){
+            file = document.getElementById("file").files[i];
+            alert(file.name);
+        }
+    }
+</script>
+<input type="file" id="file" multiple size="80" />
+<input type="button" onclick="ShowFileName();" value="uploadFile" />
+
+
 
 
 <footer>
