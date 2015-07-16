@@ -390,8 +390,48 @@ text-area: <textarea name="memo1" required></textarea>
 <input type="file" id="file" multiple size="80" />
 <input type="button" onclick="ShowFileName();" value="uploadFile" />
 
+//drag
+<script type="text/javascript">
+    function init(){
+        var source = document.getElementById("dragme");
+        var dest = document.getElementById("text");
+        //1. start drag
+        source.addEventListener("dragstart",function(ev){
+            var dt = ev.dataTransfer;
+            dt.effectAllowed = 'all';
+            //2. dragged element
+            dt.setData("text/plain","hello me");
+        },false);
 
+        //3. drag end
+        dest.addEventListener("dragged", function (ev) {
+            ev.preventDefault();
+        },false);
 
+        //4. dragging
+        dest.addEventListener("drop", function (ev) {
+            var dt = ev.dataTransfer;
+            var text = dt.getData("text/plain");
+            dest.textContent += text;
+            ev.preventDefault();
+            ev.stopPropagation();
+        },false);
+    }
+
+    document.ondragover = function (e) {
+        e.preventDefault();
+    };
+    document.ondrop = function (e) {
+        e.preventDefault();
+    };
+</script>
+<div onload="init()">
+    <div id="dragme" draggable="true" style="width: 200px; border: 1px solid gray;">
+        please drag
+    </div>
+    <div id="text" style="width: 200px; height: 200px; border: 1px solid greenyellow;">
+    </div>
+</div>
 
 <footer>
     <div>
