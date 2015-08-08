@@ -86,7 +86,10 @@ function draw(id){
     context.fillStyle = g1;
     context.fillRect(0,0,400,300);
 
-    var g2 = context.createLinearGradient(0,0,300,0);
+    //linerGradient
+    //var g2 = context.createLinearGradient(0,0,300,0);
+    //radialGradient
+    var g2 = context.createRadialGradient(250,250,0,250,250,300);
     g2.addColorStop(0,'rgba(0,0,255,0.5)');
     g2.addColorStop(1,'rgba(255,0,0,0.5)');
     for(var i=0;i<10;i++){
@@ -96,6 +99,9 @@ function draw(id){
         context.closePath();
         context.fill();
     }
+
+
+
 }
 
 
